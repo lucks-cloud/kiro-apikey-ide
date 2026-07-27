@@ -1,0 +1,66 @@
+/* Bridge Ant Design Vue onto the Kiro/VS Code theme variables. */
+html,
+body,
+#app {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: transparent;
+  color: var(--vscode-foreground);
+  font-family: var(--vscode-font-family);
+}
+
+.kk-wrap {
+  padding: 12px;
+  padding-top: 24px;
+}
+
+.kk-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.kk-ver-badge {
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 999px;
+  color: var(--vscode-descriptionForeground);
+  background: var(--vscode-badge-background, rgba(127, 127, 127, 0.18));
+  border: 1px solid rgba(127, 127, 127, 0.25);
+}
+
+.kk-sub {
+  color: var(--vscode-descriptionForeground);
+  font-size: 12px;
+  margin: 12px 0 14px;
+}
+
+.kk-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.kk-hint {
+  color: var(--vscode-descriptionForeground);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.kk-card {
+  margin-bottom: 12px;
+}
+
+/* Make antd surfaces follow the editor theme a bit better. */
+.ant-card {
+  background: var(--vscode-editorWidget-background, rgba(127, 127, 127, 0.06)) !important;
+  border-color: var(--vscode-panel-border, rgba(127, 127, 127, 0.25)) !important;
+}
+.ant-card-head,
+.ant-list-item {
+  border-color: var(--vscode-panel-border, rgba(127, 127, 127, 0.25)) !important;
+}

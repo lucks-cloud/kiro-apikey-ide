@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Build output (generated; rebuild with `npm run build` in webview-ui)
+dist/
+
+# Packaged extension artifact
+*.vsix
+
+# Secrets / local env
+.env
+.env.*
+*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+
+# Temp scratch files
+_*.js
+_*.txt

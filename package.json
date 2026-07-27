@@ -1,0 +1,85 @@
+{
+  "name": "kiro-apikey-ide",
+  "displayName": "KIRO-APIKEY-IDE",
+  "description": "使用 Kiro API Key（ksk_）直接在 Kiro 自带的对话框里选择模型聊天。",
+  "version": "1.0.13",
+  "publisher": "local",
+  "license": "MIT",
+  "icon": "media/logo.png",
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "categories": [
+    "Other",
+    "Machine Learning"
+  ],
+  "keywords": [
+    "kiro",
+    "apikey",
+    "ksk",
+    "gateway",
+    "proxy"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "*"
+  ],
+  "main": "./extension.js",
+  "scripts": {
+    "build:webview": "cd webview-ui && npm install && npm run build:prod",
+    "package": "npm run build:webview && npx --yes @vscode/vsce@latest package --out kiro-apikey-ide-$npm_package_version.vsix --allow-star-activation --skip-license --allow-missing-repository"
+  },
+  "contributes": {
+    "commands": [
+      { "command": "kiroApikeyIde.openPanel", "title": "Open Control Panel", "category": "Kiro API Key", "icon": "$(rocket)" },
+      { "command": "kiroApikeyIde.toggle", "title": "Toggle Gateway", "category": "Kiro API Key" },
+      { "command": "kiroApikeyIde.test", "title": "Test API Key", "category": "Kiro API Key" }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        { "id": "kiroApikeyIde", "title": "KIRO-APIKEY-IDE", "icon": "icon.png" }
+      ]
+    },
+    "views": {
+      "kiroApikeyIde": [
+        { "type": "webview", "id": "kiroApikeyIde.controlPanel", "name": "API Key Gateway" }
+      ]
+    },
+    "configuration": {
+      "title": "KIRO-APIKEY-IDE",
+      "properties": {
+        "kiroApikeyIde.enabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "Master switch. When on, Kiro's built-in AI calls are routed through your Kiro API key. When off, Kiro uses its official service unchanged."
+        },
+        "kiroApikeyIde.apiKeys": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": [],
+          "description": "Your Kiro API keys (each starts with ksk_). Requests always use the selected (active) key — no automatic rotation. Managed from the Control Panel."
+        },
+        "kiroApikeyIde.activeApiKey": {
+          "type": "string",
+          "default": "",
+          "description": "The currently selected API key used for connections (must be one of apiKeys). Falls back to the first key."
+        },
+        "kiroApikeyIde.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Deprecated: legacy single API key. Auto-migrated into apiKeys."
+        },
+        "kiroApikeyIde.region": {
+          "type": "string",
+          "default": "us-east-1",
+          "description": "The AWS region your Kiro API key belongs to. Default us-east-1. Change if your key was issued in another region (e.g. eu-central-1)."
+        },
+        "kiroApikeyIde.ports": {
+          "type": "object",
+          "default": { "krs": 19820, "cps": 19821 },
+          "description": "Local proxy ports. krs = AI generation plane, cps = control plane (models/usage)."
+        }
+      }
+    }
+  }
+}

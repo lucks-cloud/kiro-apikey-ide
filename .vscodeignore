@@ -1,0 +1,17 @@
+.vscode/**
+.github/**
+**/*.map
+.gitignore
+.git/**
+**/tsconfig.json
+**/node_modules/**
+webview-ui/src/**
+webview-ui/index.html
+webview-ui/vite.config.js
+webview-ui/package.json
+webview-ui/package-lock.json
+_*.js
+_*.txt
+*.psd
+*.vsix
+.DS_Store
