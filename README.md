@@ -4,6 +4,8 @@
 
 使用 Kiro API Key（`ksk_`）直接在 Kiro 自带的对话框里选择模型聊天。
 
+📖 **[查看更新日志](CHANGELOG.md)** ｜ 📦 **[前往 Releases 下载最新版本](https://github.com/lucks-cloud/kiro-apikey-ide/releases)**
+
 ## 如何使用
 
 1. 打开侧边栏的 **KIRO-APIKEY-IDE** 图标进入面板。
