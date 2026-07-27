@@ -7,6 +7,8 @@
 **🔓 开源透明**
 - **移除代码混淆**：彻底去除 webview 与扩展主进程的 `javascript-obfuscator` 加密混淆逻辑，打进 vsix 的均为可读源码，便于审阅与二次开发。
 
+- **开源协议**：项目正式采用 GNU AGPL-3.0（或更新版本）开源协议，README 补充协议说明。
+
 **🚀 工程优化**
 - **自动化发布**：新增 GitHub Actions 发布流程，推送 `v*` 标签即自动构建并将 `.vsix` 上传到对应 Release，发版更省心。
 - **依赖精简**：随混淆移除，清理了 `javascript-obfuscator`、`chalk`、`cli-table3`、`dotenv` 等仅供混淆使用的开发依赖，构建更轻快。

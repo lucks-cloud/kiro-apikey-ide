@@ -4,7 +4,7 @@
   "description": "使用 Kiro API Key（ksk_）直接在 Kiro 自带的对话框里选择模型聊天。",
   "version": "1.0.13",
   "publisher": "local",
-  "license": "MIT",
+  "license": "AGPL-3.0-or-later",
   "icon": "media/logo.png",
   "engines": {
     "vscode": "^1.94.0"
@@ -27,7 +27,7 @@
   "main": "./extension.js",
   "scripts": {
     "build:webview": "cd webview-ui && npm install && npm run build:prod",
-    "package": "npm run build:webview && npx --yes @vscode/vsce@latest package --out kiro-apikey-ide-$npm_package_version.vsix --allow-star-activation --skip-license --allow-missing-repository"
+    "package": "npm run build:webview && npx --yes @vscode/vsce@latest package --out kiro-apikey-ide-$npm_package_version.vsix --allow-star-activation --allow-missing-repository"
   },
   "contributes": {
     "commands": [
