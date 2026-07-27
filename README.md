@@ -73,6 +73,15 @@
 
 ---
 
+## 📥 安装
+
+先从 [Releases](https://github.com/lucks-cloud/kiro-apikey-ide/releases) 下载最新的 `kiro-apikey-ide-<version>.vsix`，然后用以下任意一种方式安装到 Kiro IDE：
+
+- **拖入安装**：直接把 `.vsix` 文件拖到 Kiro IDE 左侧的「扩展」面板中。
+- **菜单安装**：打开「扩展」面板，点右上角的 **⋯（三个点）** →「从 VSIX 安装…」，选择下载好的 `.vsix` 文件。
+
+安装完成后如提示重新加载，点「重新加载窗口」即可。
+
 ## 🚀 如何使用
 
 1. 打开侧边栏的 **KIRO-APIKEY-IDE** 图标进入面板。
